@@ -490,6 +490,7 @@ footer {
 
 
 
+
 }
 
 .klint-text {
@@ -497,7 +498,7 @@ footer {
     text-align: center;
     text-transform: uppercase;
     font-family: 'Comfortaa', cursive;
-    color: white;
+    color:white;
     padding: 0vw 3vw;
     padding: 4vw 3vw;
 
@@ -514,9 +515,9 @@ footer {
     height: 120vw;
     background-color: #8abfb5;
     flex-grow: 1;
-    flex-basis: 100px;
+    flex-basis: 200px;
     margin: 3vw;
-    padding: 6vw;
+    padding:6vw;
 
 
 }
@@ -567,6 +568,7 @@ footer {
     z-index: 1;
     width: 22vw;
     text-align: center;
+
 
 
 

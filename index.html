@@ -85,14 +85,13 @@
 
         <div id="attraktioner">
 
+
             <div class="attraktionflex">
 
-                <div class="attraktion1">
+               <div class="attraktion-flex-button">
 
-                    <div class="stevnsklint_img">
+                <button class="accordion">
 
-
-                    </div>
 
                     <div class="klint-text">
                         <h2>Stevns Klint <br>Unesco Verdensarv</h2>
@@ -100,97 +99,164 @@
 
 
 
+                    <div class="stevnsklint_img">
+                    </div>
+
+
+                     <div class="arrow-klint">
+
+                    <img src="SVG/hvidpil.svg" alt="">
+
                 </div>
 
 
-                <div class="attraktion2">
-
-                    <div class="koldkrigs_img">
 
 
-                    </div>
+                </button>
 
-                    <div class="koldkrigs-text">
+        <div class="panel">
+  Content sahfjgjhg fdj sgsjd
+  <br>
+  dfjg jd j dfj gdjfgd
+  </div>
+
+  </div>
+
+
+<div class="attraktion-flex-button">
+                <button class="accordion2">
+
+                     <div class="koldkrigs-text">
                         <h2>Koldkrigsmuseum <br>stevnsfort</h2>
                     </div>
 
 
+
+                    <div class="koldkrigs_img">
+                    </div>
+
+
+
+                      <div class="arrow-krig">
+
+                    <img src="SVG/hvidpil.svg" alt="">
+
                 </div>
 
 
-                <div class="attraktion3">
 
-                    <div class="geomuseum_img">
+                </button>
 
-                    </div>
 
-                    <div class="geo-text">
+<div class="panel">
+  Content sahfjgjhg fdj sgsjd
+  <br>
+  dfjg jd j dfj gdjfgd
+  </div>
+
+                </div>
+
+
+
+
+<div class="attraktion-flex-button">
+                <button class="accordion3">
+                     <div class="geo-text">
                         <h2>Geomuseum<br>Faxe</h2>
                     </div>
 
 
+                    <div class="geomuseum_img">
+                    </div>
+
+
+
+                     <div class="arrow-geo">
+
+                    <img src="SVG/hvidpil.svg" alt="">
+
+                </div>
+
+
+
+                </button>
+
+                <div class="panel">
+  Content sahfjgjhg fdj sgsjd
+  <br>
+  dfjg jd j dfj gdjfgd
+  </div>
                 </div>
 
             </div>
 
         </div>
+          </div>
+
+          <script>
+              var accordions = document.querySelectorAll("button.accordion");
+
+for (var i = 0; i < accordions.length; i++) {
+  accordions[i].onclick = function() {
+    this.classList.toggle("active");
+    this.nextElementSibling.classList.toggle("show");
+  };
+}
+
+function closeAll() {
+  for (var i = 0; i < accordions.length; i++) {
+    accordions[i].classList.remove("active");
+    accordions[i].nextElementSibling.classList.remove("show");
+  }
+}
+    </script>
+
+    <div class="vindue">
+    <div class="indholds-nav">
+    <button class="undervisning">Undervisning</button>
+    <button class="viden">Viden</button>
+    <button class="attraktioner">Attraktioner</button>
+    </div>
+
+
+    <div class="tekst"></div>
+    <div class="billede">            <img src="" alt="">
+</div>
+       </div>
+
 
         <script>
-            document.querySelector("button.se-mere-klint").addEventListener("click", expandKlint);
-            //                    document.querySelector("button.se-mere-fort").addEventListener("click", expandFort);
-            //                    document.querySelector("button.se-mere-geo").addEventListener("click", expandGeo);
+                let indholdKlint;
+                document.addEventListener("DOMContentLoaded", start);
+
+                function start() {
 
 
-            function expandKlint() {
-                document.querySelector("div.attraktion1").classList.toggle("expand");
-
-            }
 
 
-            let dropdownKlint = document.querySelectorAll("button.se-mere-klint");
+                    async function getJson() {
 
-            for (let i = 0; i < dropdownKlint.length; i++) {
-                dropdownKlint[i].onclick = function() {
-                    this.classList.toggle("click");
-                    this.nextElementSibling.classList.toggle("show");
+                        let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/pages/96"
+                        let jsonData = await fetch(url);
+                        indholdKlint = await jsonData.json();
+
+                    }
+
+                     document.querySelector("button.accordion").addEventListener("click", visIndhold);
+
+                    function visIndhold() {
+
+                        document.querySelector(".tekst").innerHTML = indholdKlint.content.rendered;
+                         document.querySelector(".billede img").src = indholdKlint.guid;
+
+                    }
+
+
+                    getJson();
 
                 }
-            }
+            </script>
 
-
-
-
-            //                    function expandFort() {
-            //                        document.querySelector("div.attraktion2").classList.toggle("expand");
-            //
-            //                    }
-            //
-            //                      let dropdownFort = document.querySelectorAll("button.se-mere-fort");
-            //
-            //                    for (let i = 0; i < dropdownFort.length; i++) {
-            //                        dropdownFort[i].onclick = function() {
-            //                            this.classList.toggle("click");
-            //                            this.nextElementSibling.classList.toggle("show");
-            //
-            //                        }
-            //                    }
-            //
-            //                    function expandGeo() {
-            //                        document.querySelector("div.attraktion3").classList.toggle("expand");
-            //
-            //
-            //                    }
-            //
-            //                      let dropdownGeo = document.querySelectorAll("button.se-mere-geo");
-            //
-            //                    for (let i = 0; i < dropdownGeo.length; i++) {
-            //                        dropdownGeo[i].onclick = function() {
-            //                            this.classList.toggle("click");
-            //                            this.nextElementSibling.classList.toggle("show");
-            //
-            //                        }
-            //                    }
-        </script>
 
 
 
@@ -282,6 +348,7 @@
 
 
 
+<!--
         <footer>
 
             <div class="footer-content">
@@ -354,7 +421,8 @@
 
 
         </footer>
-    </div>
+-->
+
 
 
 
