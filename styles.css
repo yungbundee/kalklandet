@@ -964,3 +964,28 @@ div.panel.show{
     transition: 0.3s;
     margin-bottom: 10vw;
 }
+
+.tekst {
+    color: black;
+}
+
+vindue {
+display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+div.show{
+
+      opacity:1;
+  max-height:500px;
+  padding:8px;
+  margin:2px 0 4px;
+
+
+}
+
+.hide{
+    display: none;
+
+}
