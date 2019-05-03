@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+    </style>
+
+
+
+    <script src="script.js"></script>
+
+    <title>Kalklandet</title>
+
+</head>
+
+<body>
+
+    <div id="content">
+
+
+
+        <header>
+            <main>
+
+                <nav class="navbar sticky">
+                    <span class="navbar-toggle" id="js-navbar-toggle">
+
+                        <i class="fas fa-align-justify"></i>
+                    </span>
+                    <a href="index.html" class="logo"><img src="img/kalklogo.svg" alt=""></a>
+                    <ul class="main-nav" id="js-menu">
+
+                        <li>
+                            <a href="index.html" class="nav-links">Attraktioner</a>
+                        </li>
+
+                        <li>
+                            <a href="pris.html" class="nav-links">Priser</a>
+                        </li>
+
+
+                        <li>
+                            <a href="om.html" class="nav-links">Om os</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-links">BOOK NU</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="headertext">
+
+                    <h1>ATTRAKTIONER<br>
+                        <p class="underheader" style="color: white">Læs om de forskellige attraktioner vi tilbyder herunder</p>
+
+                    </h1>
+
+
+                    <br><br>
+
+
+                </div>
+
+                <div class="arrow">
+
+                    <img src="SVG/hvidpil.svg" alt="">
+
+                </div>
+
+
+            </main>
+
+        </header>
+
+
+        <div id="attraktioner">
+
+            <div class="attraktionflex">
+
+                <div class="attraktion1">
+
+                    <div class="stevnsklint_img">
+
+
+                    </div>
+
+                    <div class="klint-text">
+                        <h2>Stevns Klint <br>Unesco Verdensarv</h2>
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="attraktion2">
+
+                    <div class="koldkrigs_img">
+
+
+                    </div>
+
+                    <div class="koldkrigs-text">
+                        <h2>Koldkrigsmuseum <br>stevnsfort</h2>
+                    </div>
+
+
+                </div>
+
+
+                <div class="attraktion3">
+
+                    <div class="geomuseum_img">
+
+                    </div>
+
+                    <div class="geo-text">
+                        <h2>Geomuseum<br>Faxe</h2>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            document.querySelector("button.se-mere-klint").addEventListener("click", expandKlint);
+            //                    document.querySelector("button.se-mere-fort").addEventListener("click", expandFort);
+            //                    document.querySelector("button.se-mere-geo").addEventListener("click", expandGeo);
+
+
+            function expandKlint() {
+                document.querySelector("div.attraktion1").classList.toggle("expand");
+
+            }
+
+
+            let dropdownKlint = document.querySelectorAll("button.se-mere-klint");
+
+            for (let i = 0; i < dropdownKlint.length; i++) {
+                dropdownKlint[i].onclick = function() {
+                    this.classList.toggle("click");
+                    this.nextElementSibling.classList.toggle("show");
+
+                }
+            }
+
+
+
+
+            //                    function expandFort() {
+            //                        document.querySelector("div.attraktion2").classList.toggle("expand");
+            //
+            //                    }
+            //
+            //                      let dropdownFort = document.querySelectorAll("button.se-mere-fort");
+            //
+            //                    for (let i = 0; i < dropdownFort.length; i++) {
+            //                        dropdownFort[i].onclick = function() {
+            //                            this.classList.toggle("click");
+            //                            this.nextElementSibling.classList.toggle("show");
+            //
+            //                        }
+            //                    }
+            //
+            //                    function expandGeo() {
+            //                        document.querySelector("div.attraktion3").classList.toggle("expand");
+            //
+            //
+            //                    }
+            //
+            //                      let dropdownGeo = document.querySelectorAll("button.se-mere-geo");
+            //
+            //                    for (let i = 0; i < dropdownGeo.length; i++) {
+            //                        dropdownGeo[i].onclick = function() {
+            //                            this.classList.toggle("click");
+            //                            this.nextElementSibling.classList.toggle("show");
+            //
+            //                        }
+            //                    }
+        </script>
+
+
+
+        <div class="tagline">
+            <h2 class=tagline-text>
+                <em> Køb et <span style="color: #ffeb00"> årskort!</span>
+                    <br>og spring køen over</em></h2>
+            <img id="id_kort" src="ui_elementer/identity-card.svg" alt="">
+
+
+
+        </div>
+
+
+        <div class="aktuelt">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+
+                    <img src="img/slide1.jpg" style="width:100%">
+                    <div class="text">Stevns Fort</div>
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="img/slide2.jpg" style="width:100%">
+                    <div class="text">Klinten</div>
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="img/slide3.jpg" style="width:100%">
+                    <div class="text">Geo Museet</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <br>
+
+
+                <div style="text-align:center">
+
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
+            </div>
+
+        </div>
+        <br>
+
+
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = slides.length
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+
+
+
+
+        <footer>
+
+            <div class="footer-content">
+
+                <p class="open-hours"></p>
+
+
+                <p class="footer-kontakt"></p>
+
+            </div>
+
+            <script>
+                let tekstFooter;
+                document.addEventListener("DOMContentLoaded", start);
+
+                function start() {
+
+                    async function getJson() {
+
+                        let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/80"
+                        let jsonData = await fetch(url);
+                        tekstFooter = await jsonData.json();
+                        visFooter();
+                    }
+
+                    function visFooter() {
+
+                        document.querySelector(".open-hours").innerHTML = tekstFooter.content.rendered;
+
+                    }
+                    getJson();
+
+                }
+            </script>
+
+
+            <script>
+                let tekstKontakt;
+                document.addEventListener("DOMContentLoaded", start);
+
+                function start() {
+
+                    async function getJson() {
+
+                        let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/81"
+                        let jsonData = await fetch(url);
+                        tekstKontakt = await jsonData.json();
+                        visKontakt();
+                    }
+
+                    function visKontakt() {
+
+                        document.querySelector(".footer-kontakt").innerHTML = tekstKontakt.content.rendered;
+
+                    }
+                    getJson();
+
+                }
+            </script>
+
+
+
+            <div class="find-vej">
+
+                <img src="Billeder/kort_kalklandet.png" alt="">
+
+
+            </div>
+
+
+
+        </footer>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

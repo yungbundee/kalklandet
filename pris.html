@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="stylepris.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+    </style>
+
+
+
+    <script src="script.js"></script>
+
+    <title>Using CSS Grid</title>
+
+</head>
+
+<body>
+
+    <div id="content">
+
+
+
+        <header>
+            <main>
+
+                <nav class="navbar sticky">
+                    <span class="navbar-toggle" id="js-navbar-toggle">
+
+                        <i class="fas fa-align-justify"></i>
+                    </span>
+                    <a href="index.html" class="logo"><img src="img/kalklogo.svg" alt=""></a>
+                    <ul class="main-nav" id="js-menu">
+
+                        <li>
+                            <a href="index.html" class="nav-links">Attraktioner</a>
+                        </li>
+
+                        <li>
+                            <a href="pris.html" class="nav-links">Priser</a>
+                        </li>
+
+
+                        <li>
+                            <a href="om.html" class="nav-links">Om os</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-links">BOOK NU</a>
+                        </li>
+                    </ul>
+
+
+                </nav>
+
+                <div class="overheader">
+
+                    <div class="headertext">
+
+                        <h1>Priser<br>
+                            <p class="underheader" style="color: white">Få et overblik og besøg os i dag</p>
+
+                        </h1>
+                        <br><br>
+
+
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="arrow">
+
+                    <img src="SVG/hvidpil.svg" alt="">
+
+                </div>
+
+            </main>
+
+            <div class="tagline1">
+                <h1 class=tagline-text1>
+                    <em>Her finder du et overblik over priser for vores 3 forskellige seværdigheder </em></h1>
+
+            </div>
+
+        </header>
+
+
+        <div id="attraktioner">
+
+            <div class="attraktionflex">
+
+                <div class="attraktion1">
+
+                    <div class="stevnsklint_img">
+
+                        <img src="img/stevnsklint1.svg" alt="">
+                    </div>
+
+                    <div class="klint-text">
+                        <h2>Stevns Klint <br>Unesco Verdensarv</h2>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Egen hånd</p>
+                        <p class="stevns-egenhaand-pris"></p>
+                    </div>
+
+
+
+                    <div class="pris-linje">
+                        <p>Grundpris</p>
+                        <p class="stevns-grundpris-guidet"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Pr voksen</p>
+                        <p class="stevns-voksen-guidet"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Pr barn</p>
+                        <p class="stevns-barn-6-17-guidet"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Pr barn</p>
+                        <p class="stevns-barn-0-5-guidet"></p>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+
+                <script>
+                    let prisStevns;
+                    document.addEventListener("DOMContentLoaded", start);
+
+                    function start() {
+
+                        async function getJson() {
+
+                            let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/prislister/62"
+                            let jsonData = await fetch(url);
+                            prisStevns = await jsonData.json();
+                            visPris();
+                        }
+
+                        function visPris() {
+
+                            document.querySelector(".stevns-egenhaand-pris").textContent = prisStevns.entre_stevns;
+                            document.querySelector(".stevns-grundpris-guidet").textContent = prisStevns.stevns_klint_guided_tur;
+                            document.querySelector(".stevns-voksen-guidet").textContent = prisStevns.stevns_klint_guided_tur_voksen;
+                            document.querySelector(".stevns-barn-6-17-guidet").textContent = prisStevns.stevns_klint_guided_tur_barn_6;
+                            document.querySelector(".stevns-barn-0-5-guidet").textContent = prisStevns.stevns_klint_guided_tur_barn_0;
+
+                        }
+                        getJson();
+
+                    }
+                </script>
+
+
+
+                <div class="attraktion2">
+
+                    <div class="koldkrigs_img">
+
+                        <img src="img/koldkrigs.svg" alt="">
+                    </div>
+
+                    <div class="koldkrigs-text">
+                        <h2>Koldkrigsmuseum <br>stevnsfort</h2>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Voksen</p>
+                        <p class="kold_voksen"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Pensionister/Studerende</p>
+                        <p class="kold_studpen"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Børn/Unge</p>
+                        <p class="kold_barnung"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+
+                        <p>Voksen</p>
+                        <p class="kold_voksen_guided"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Pensionister/studerende</p>
+                        <p class="kold_studpen_guided"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Børn/unge 6-17 år</p>
+                        <p class="kold_barnung_guided"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Børn 0-5 år</p>
+                        <p class="kold_barn_guided"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>For Grupper
+                            <br>max 30 personer <br> Varighed 2 timer</p>
+                        <p class="kold_gruppe_guided"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>For Grupper - Special Edition
+                            <br>max 30 personer <br> Varighed 2 timer</p>
+                        <p class="kold_gruppe_special"></p>
+                    </div>
+
+
+
+                </div>
+
+
+                <script>
+                    let prisKold;
+                    document.addEventListener("DOMContentLoaded", start);
+
+                    function start() {
+
+                        async function getJson() {
+
+                            let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/prislister/43"
+                            let jsonData = await fetch(url);
+                            prisKold = await jsonData.json();
+                            visPris();
+                        }
+
+                        function visPris() {
+
+                            document.querySelector(".kold_voksen").textContent = prisKold.pris_voksen_egen;
+                            document.querySelector(".kold_studpen").textContent = prisKold.pensionisterstuderende_egen_hnd;
+                            document.querySelector(".kold_barnung").textContent = prisKold.pris_brnunge_egenhnd;
+                            document.querySelector(".kold_voksen_guided").textContent = prisKold.voksen_guidet;
+                            document.querySelector(".kold_studpen_guided").textContent = prisKold.pensionister_studerende_guidet;
+                            document.querySelector(".kold_barnung_guided").textContent = prisKold.boern_unge_guidet;
+                            document.querySelector(".kold_barn_guided").textContent = prisKold.barn_aar_guidet;
+                            document.querySelector(".kold_gruppe_guided").textContent = prisKold.for_grupper_max_30;
+                            document.querySelector(".kold_gruppe_special").textContent = prisKold.for_grupper_special_edition_max_30;
+
+                        }
+                        getJson();
+
+                    }
+                </script>
+
+
+
+                <div class="attraktion3">
+
+                    <div class="geomuseum_img">
+                        <img src="img/geomuseum2.svg" alt="">
+                    </div>
+
+                    <div class="geo-text">
+                        <h2>Geomuseum<br>Faxe</h2>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Voksen</p>
+                        <p class="geo_voksen"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Pensionister/Studerende</p>
+                        <p class="geo_studpen"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Børn/Unge</p>
+                        <p class="geo_barnung"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+
+                        <p>Leje af hammer og mejsel</p>
+                        <p class="geo_hammer_mejsel"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p style="color: rgba(8, 0, 0, 0.42);">Fossiljagt</p>
+                        <p class="geo_fossil_grund"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Voksen</p>
+                        <p class="geo_fossil_voksen"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Barn 6-17 år</p>
+                        <p class="geo_fossil_barnung"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Barn 0-5 år</p>
+                        <p class="geo_fossil_barn"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p style="color: rgba(8, 0, 0, 0.42);">Kalkens Rige</p>
+                        <p class="geo_kalkrige_grund"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Voksen</p>
+                        <p class="geo_kalkrige_voksen"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Barn 6-17 år</p>
+                        <p class="geo_kalkrige_barnung"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Barn 0-5 år</p>
+                        <p class="geo_kalkrige_barn"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p style="color: rgba(8, 0, 0, 0.42);">Museum, Kalkpark & Prismet</p>
+                        <p class="geo_mkp_grund"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Voksen</p>
+                        <p class="geo_mkp_voksen"></p>
+                    </div>
+
+                    <div class="pris-linje">
+                        <p>Barn 6-17 år</p>
+                        <p class="geo_mkp_barnung"></p>
+                    </div>
+
+
+                    <div class="pris-linje">
+                        <p>Barn 0-5 år</p>
+                        <p class="geo_mkp_barn"></p>
+                    </div>
+
+
+
+                </div>
+
+
+                <script>
+                    let prisGeo;
+                    document.addEventListener("DOMContentLoaded", start);
+
+                    function start() {
+
+                        async function getJson() {
+
+                            let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/prislister/76"
+                            let jsonData = await fetch(url);
+                            prisGeo = await jsonData.json();
+                            visPris();
+                        }
+
+                        function visPris() {
+
+                            document.querySelector(".geo_voksen").textContent = prisGeo.pris_voksen_egen;
+                            document.querySelector(".geo_studpen").textContent = prisGeo.pensionisterstuderende_egen_hnd;
+                            document.querySelector(".geo_barnung").textContent = prisGeo.pris_brnunge_egenhnd;
+                            document.querySelector(".geo_hammer_mejsel").textContent = prisGeo.leje_af_hammer_og_mejsel;
+                            document.querySelector(".geo_fossil_grund").textContent = prisGeo.fossiljagt_grundpris;
+                            document.querySelector(".geo_fossil_voksen").textContent = prisGeo.fossiljagt_pr_voksen;
+                            document.querySelector(".geo_fossil_barnung").textContent = prisGeo.fossiljagt_pr_barn_6_r;
+                            document.querySelector(".geo_fossil_barn").textContent = prisGeo.fossiljagt_pr_barn_0_r;
+                            document.querySelector(".geo_kalkrige_grund").textContent = prisGeo.kalkensrige_grundpris;
+                            document.querySelector(".geo_kalkrige_voksen").textContent = prisGeo.kalkensrige_pr_voksen;
+                            document.querySelector(".geo_kalkrige_barnung").textContent = prisGeo.kalkensrige_pr_barn_6_r;
+                            document.querySelector(".geo_kalkrige_barn").textContent = prisGeo.kalkensrige_pr_barn_0_r;
+                            document.querySelector(".geo_mkp_grund").textContent = prisGeo.mkp_grundpris;
+                            document.querySelector(".geo_mkp_voksen").textContent = prisGeo.mkp_pr_voksen;
+                            document.querySelector(".geo_mkp_barnung").textContent = prisGeo.mkp_pr_barn_6_r;
+                            document.querySelector(".geo_mkp_barn").textContent = prisGeo.mkp_pr_barn_0_r;
+
+                        }
+                        getJson();
+
+                    }
+                </script>
+
+
+
+            </div>
+
+        </div>
+
+
+        <div class="om">
+            <div class="omflex">
+
+                <div class="aarskort">
+                    <img src="aarskortstor.svg" alt="aarskort">
+
+                </div>
+
+
+
+                <div class="aarskort_tekst">
+                    <p class="omtekst"></p>
+                </div>
+
+
+                <script>
+                    let tekstAarskort;
+                    document.addEventListener("DOMContentLoaded", start);
+
+                    function start() {
+
+                        async function getJson() {
+
+                            let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/prislister/77"
+                            let jsonData = await fetch(url);
+                            tekstAarskort = await jsonData.json();
+                            visAarskort();
+                        }
+
+                        function visAarskort() {
+
+                            document.querySelector(".omtekst").innerHTML = tekstAarskort.content.rendered;
+
+
+                        }
+                        getJson();
+
+                    }
+                </script>
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <footer>
+
+            <div class="footer-content">
+
+                <p class="open-hours"></p>
+
+
+                <p class="footer-kontakt"></p>
+
+            </div>
+
+            <script>
+                let tekstFooter;
+                document.addEventListener("DOMContentLoaded", start);
+
+                function start() {
+
+                    async function getJson() {
+
+                        let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/80"
+                        let jsonData = await fetch(url);
+                        tekstFooter = await jsonData.json();
+                        visFooter();
+                    }
+
+                    function visFooter() {
+
+                        document.querySelector(".open-hours").innerHTML = tekstFooter.content.rendered;
+
+                    }
+                    getJson();
+
+                }
+            </script>
+
+
+            <script>
+                let tekstKontakt;
+                document.addEventListener("DOMContentLoaded", start);
+
+                function start() {
+
+                    async function getJson() {
+
+                        let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/81"
+                        let jsonData = await fetch(url);
+                        tekstKontakt = await jsonData.json();
+                        visKontakt();
+                    }
+
+                    function visKontakt() {
+
+                        document.querySelector(".footer-kontakt").innerHTML = tekstKontakt.content.rendered;
+
+                    }
+                    getJson();
+
+                }
+            </script>
+
+
+
+            <div class="find-vej">
+
+                <img src="Billeder/kort_kalklandet.png" alt="">
+
+
+            </div>
+
+
+
+        </footer>
+
+    </div>
+
+
+
+</body>
+
+</html>

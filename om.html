@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="styleom.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+    </style>
+
+
+
+    <script src="script.js"></script>
+
+    <title>Using CSS Grid</title>
+
+</head>
+
+<body>
+
+    <div id="content">
+
+
+
+        <header>
+            <main id="main_om">
+
+                <nav class="navbar sticky">
+                    <span class="navbar-toggle" id="js-navbar-toggle">
+
+                        <i class="fas fa-align-justify"></i>
+                    </span>
+                    <a href="index.html" class="logo"><img src="img/kalklogo.svg" alt=""></a>
+                    <ul class="main-nav" id="js-menu">
+
+                        <li>
+                            <a href="index.html" class="nav-links">Attraktioner</a>
+                        </li>
+
+                        <li>
+                            <a href="pris.html" class="nav-links">Priser</a>
+                        </li>
+
+
+                        <li>
+                            <a href="om.html" class="nav-links">Om os</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-links">BOOK NU</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="overheader">
+
+                    <div class="headertext">
+
+                        <h1>OM KALklandet<br>
+                            <p class="underheader" style="color: #ffffff">Hvem er vi og hvad laver vi?</p>
+
+                        </h1>
+                        <br><br>
+
+                    </div>
+
+
+                </div>
+                <div class="arrow">
+
+                    <img src="SVG/hvidpil.svg" alt="">
+
+                </div>
+
+            </main>
+
+            <div class="tagline1">
+                <h1 class=tagline-text1>
+                    <em>Sammen kan vi give jer den bedste oplevelse med vores viden og sammenhold </em></h1>
+
+            </div>
+
+        </header>
+
+
+
+        <div class="om">
+            <div class="omflex">
+
+                <div class="ompic">
+
+                    <img claas="omosbillede" src="" alt="omosbillede">
+
+                </div>
+
+
+
+                <div class="omtext">
+
+                    <p class="omtekst"></p>
+
+                </div>
+
+
+
+                <script>
+                    let tekstOm;
+                    document.addEventListener("DOMContentLoaded", start);
+
+                    function start() {
+
+                        async function getJson() {
+
+                            let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/55"
+                            let jsonData = await fetch(url);
+                            tekstOm = await jsonData.json();
+                            visOm();
+                        }
+
+                        function visOm() {
+
+                            document.querySelector(".omtekst").innerHTML = tekstOm.content.rendered;
+                            document.querySelector(".ompic img").src = tekstOm.om_os_billede.guid;
+
+
+                        }
+                        getJson();
+
+                    }
+                </script>
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="tagline">
+                <h2 class=tagline-text>Museet vision er vores mål for fremtiden<br>
+                    <em></em></h2>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="aktuelt">
+
+
+            <div id="omkasser">
+                <div id="om_medarbejdere">
+                    <div class="centered">
+                        <h1 style="color: white">medarbejdere</h1>
+                    </div>
+
+
+                </div>
+
+                <div id="om_vision">
+                    <div class="centered">
+                        <h1 style="color: white">Visioner</h1>
+                    </div>
+
+                </div>
+
+                <div id="om_stillinger">
+
+                    <div class="centered">
+                        <h1 style="color: white">Ledige stillinger</h1>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <footer>
+
+            <div class="footer-content">
+
+                <p class="open-hours"></p>
+
+
+                <p class="footer-kontakt"></p>
+
+            </div>
+
+            <script>
+                let tekstFooter;
+                document.addEventListener("DOMContentLoaded", start);
+
+                function start() {
+
+                    async function getJson() {
+
+                        let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/80"
+                        let jsonData = await fetch(url);
+                        tekstFooter = await jsonData.json();
+                        visFooter();
+                    }
+
+                    function visFooter() {
+
+                        document.querySelector(".open-hours").innerHTML = tekstFooter.content.rendered;
+
+                    }
+                    getJson();
+
+                }
+            </script>
+
+
+            <script>
+                let tekstKontakt;
+                document.addEventListener("DOMContentLoaded", start);
+
+                function start() {
+
+                    async function getJson() {
+
+                        let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/81"
+                        let jsonData = await fetch(url);
+                        tekstKontakt = await jsonData.json();
+                        visKontakt();
+                    }
+
+                    function visKontakt() {
+
+                        document.querySelector(".footer-kontakt").innerHTML = tekstKontakt.content.rendered;
+
+                    }
+                    getJson();
+
+                }
+            </script>
+
+
+
+            <div class="find-vej">
+
+                <img src="Billeder/kort_kalklandet.png" alt="">
+
+
+            </div>
+
+
+
+        </footer>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
