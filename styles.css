@@ -133,33 +133,6 @@ img {
 }
 
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-
-
-}
-
-.open-hours {
-    flex-grow: 1;
-    flex-basis: 200px;
-
-}
-
-.footer-kontakt {
-    flex-grow: 1;
-    flex-basis: 200px;
-    /*    font-family: 'Comfortaa', cursive;*/
-    /*    font-family: 'Montserrat',
- sans-serif;*/
-
-}
-
-.find-vej {
-    flex-grow: 1;
-    flex-basis: 200px;
-}
-
 /*----------------HEADER-------------------*/
 
 
@@ -175,9 +148,19 @@ img {
 .navbar {
     text-transform: uppercase;
     font-size: 10px;
-    background: rgba(47, 47, 47, 0);
+
     padding-bottom: 10px;
     font-weight: 800;
+
+    transition: .4s;
+
+}
+
+.nav-colored {
+
+    transition: .4s;
+    background: rgba(87, 118, 177, 0.57);
+
 
 }
 
@@ -376,15 +359,6 @@ main {
 
     padding: 6vw;
 }
-
-footer {
-
-    background: rgb(199, 196, 180);
-    color: aliceblue;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 
 #attraktioner {
 
@@ -753,8 +727,8 @@ div.panel.show {
     font-weight: 300;
     color: #000000;
     /*    text-shadow: 0px 5px #a7a7a7;*/
-    padding: 5vw;
-    font-size: 4vw;
+    padding: 5vw 2vw 1vw 3vw;
+    font-size: 3vw;
 
 }
 
@@ -815,12 +789,34 @@ div.panel.show {
 
 .nyhedertext {}
 
+.text p {
+
+    color: #555555;
+    text-align: center;
+    font-size: 2.4vw;
+    font-family: 'Gotham';
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 2vw;
 
 
-/*----------------FOOTER-------------------*/
+}
+
+.prev {
+    margin-right: 20vw;
+    margin-left: 20vw;
+    color: #000000;
+    cursor: pointer;
 
 
+}
 
+.next {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    color: #000000;
+    cursor: pointer;
+}
 
 .stevns-indhold {
 
@@ -1121,48 +1117,6 @@ div.show {
 
 
 
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 5vw;
-
-
-}
-
-.open-hours p {
-
-    font-weight: 100;
-    font-size: 3vw;
-
-}
-
-.open-hours {
-    flex-grow: 1;
-    flex-basis: 200px;
-    padding: 5vw;
-
-}
-
-
-.footer-kontakt p {
-
-    font-weight: 100;
-    font-size: 3vw;
-
-}
-
-.footer-kontakt {
-    flex-grow: 1;
-    flex-basis: 200px;
-    padding: 5vw;
-}
-
-.find-vej {
-    flex-grow: 1;
-    flex-basis: 200px;
-    padding: 5vw;
-}
 
 .attraktionflextext {
     overflow: hidden;
@@ -1183,6 +1137,7 @@ div.show {
 
 @media screen and (min-width:768px) {
 
+
     .attraktionflextext h2 {
         font-size: 2vw;
     }
@@ -1197,3 +1152,177 @@ div.show {
 
 
 }
+
+/*----------------FOOTER-------------------*/
+
+.footer-content {
+
+    padding: 5vw;
+    background: #25282B;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+
+
+}
+
+.open-hours p {
+
+    font-weight: 100;
+    font-size: 3vw;
+     text-align: center;
+
+}
+
+.open-hours {
+    flex-grow: 1;
+    padding: 5vw;
+     text-align: center;
+
+}
+
+
+.footer-kontakt p {
+
+    font-weight: 100;
+    font-size: 3vw;
+     text-align: center;
+
+}
+
+.open-hours h2 {
+
+    font-size: 3vw;
+    text-transform: uppercase;
+    margin: 2vw 0vw;
+
+}
+
+
+.footer-kontakt h2 {
+
+    font-size: 3vw;
+    text-transform: uppercase;
+    margin: 2vw 0vw;
+     text-align: center;
+
+}
+
+.footer-kontakt {
+    flex-grow: 1;
+
+    padding: 5vw;
+
+}
+
+.find-vej {
+    flex-grow: 1;
+
+    padding: 5vw;
+}
+
+.find-vej-tekst{
+
+
+    color: white;
+    text-transform: uppercase;
+    margin: 0vw 0vw 2vw;
+     text-align: center;
+
+}
+
+
+
+
+
+@media screen and (min-width: 760px) {
+
+    footer {
+
+        background: rgb(199, 196, 180);
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+    }
+
+ .footer-content {
+
+    padding: 2vw;
+
+
+
+
+}
+    .open-hours {
+        flex-grow: 1;
+        flex-basis: 200px;
+        padding: 0vw;
+
+    }
+
+    .footer-kontakt {
+        flex-grow: 1;
+        flex-basis: 200px;
+        padding: 2vw;
+
+    }
+
+    .find-vej {
+        flex-grow: 1;
+        flex-basis: 200px;
+        padding: 2vw;
+
+
+    }
+
+    .find-vej img{
+          border-radius: 100%;
+        overflow: hidden;
+        max-height: 15vw;
+        width: auto;
+
+    }
+
+    .open-hours p {
+
+        font-size: 1vw;
+        line-height: 2vw;
+    }
+
+
+    .footer-kontakt p {
+
+        font-size: 1vw;
+        line-height: 2vw;
+
+    }
+
+     .footer-kontakt{
+padding: 0vw;
+
+    }
+
+    .open-hours h2 {
+
+        font-size: 1.7vw;
+        text-transform: uppercase;
+        margin: 2vw 0vw;
+    }
+
+
+    .footer-kontakt h2 {
+
+        font-size: 1.7vw;
+        text-transform: uppercase;
+        margin: 2vw 0vw;
+
+    }
+
+
+}
+
+
+
+/*----------------FOOTER END-------------------*/

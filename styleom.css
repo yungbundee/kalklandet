@@ -143,40 +143,6 @@ img {
 
 
 
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 5vw;
-
-}
-
-.open-hours {
-    flex-grow: 1;
-    flex-basis: 200px;
-    padding: 5vw;
-
-
-}
-
-.footer-kontakt {
-    flex-grow: 1;
-    flex-basis: 200px;
-    padding: 5vw;
-    ¨
-}
-
-.find-vej {
-    flex-grow: 1;
-    flex-basis: 200px;
-    padding: 5vw;
-    width: 350px;
-    margin: 5vw;
-    text-transform: uppercase;
-
-
-}
-
 
 /*----------------HEADER-------------------*/
 
@@ -194,9 +160,19 @@ img {
 .navbar {
     text-transform: uppercase;
     font-size: 10px;
-    background: rgba(47, 47, 47, 0);
+
     padding-bottom: 10px;
     font-weight: 800;
+
+    transition: .4s;
+
+}
+
+.nav-colored {
+
+    transition: .4s;
+    background: rgba(87, 118, 177, 0.57);
+
 
 }
 
@@ -287,8 +263,6 @@ img {
 }
 
 
-
-
 .headertext {
     padding: 40vw 40vw 0vw 0vw;
     display: inline-block;
@@ -305,48 +279,6 @@ img {
 
 
 /*----------------HEADER END-------------------*/
-
-
-/*----------------GRID AREAS-------------------*/
-
-
-#content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-
-    max-width: 960px;
-    margin: 0 auto;
-    grid-template-areas:
-        "header header header header"
-        "om om om om"
-        "aktuelt aktuelt aktuelt aktuelt"
-        "footer footer footer footer";
-}
-
-/* desktop grid */
-@media screen and (min-width: 760px) {
-    #content {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-        grid-gap: 10px;
-        max-width: 100%;
-        margin: 0 auto;
-        grid-template-areas:
-            "header header header header"
-            "om om om om"
-            "aktuelt aktuelt aktuelt aktuelt"
-            "aktuelt aktuelt aktuelt aktuelt"
-            "footer footer footer footer";
-    }
-}
-
-#content > * {}
-
-header {
-    grid-area: header;
-}
 
 
 h3 {
@@ -388,6 +320,9 @@ main {
     display: flex;
     flex-wrap: wrap;
     padding: 3vw;
+    padding-top: 4vw;
+    padding-bottom: 0vw;
+
 
 }
 
@@ -453,11 +388,6 @@ main {
     padding: 6vw;
 }
 
-footer {
-    grid-area: footer;
-    background: #25282B;
-    color: aliceblue;
-}
 
 /*----------------OMKASSER-------------------*/
 
@@ -476,12 +406,12 @@ footer {
     position: relative;
     text-align: center;
     cursor: pointer;
-    margin: 20px;
+    margin: 10px;
     margin-left: 3vw;
     margin-right: 3vw;
-    background-image: url(Billeder/medarbejdere.jpg);
+    background-image: url(ombilleder/medarbejdere.JPG);
     background-size: 100%;
-    opacity: 0.5;
+    opacity: 0.8;
     filter: alpha(opacity=50);
     /* For IE8 and earlier */
 
@@ -497,12 +427,12 @@ footer {
     position: relative;
     text-align: center;
     cursor: pointer;
-    margin: 20px;
+    margin: 10px;
     margin-left: 3vw;
     margin-right: 3vw;
-    background-image: url(Billeder/mission.JPG);
+    background-image: url(ombilleder/Prismet%202.JPG);
     background-size: 100%;
-    opacity: 0.5;
+    opacity: 0.8;
     filter: alpha(opacity=50);
     /* For IE8 and earlier */
 
@@ -517,14 +447,13 @@ footer {
     height: 200px;
     position: relative;
     text-align: center;
-
     cursor: pointer;
-    margin: 20px;
+    margin: 10px;
     margin-left: 3vw;
     margin-right: 3vw;
-    background-image: url(Billeder/ledigestillinger.jpg);
+    background-image: url(ombilleder/ledigestiller.jpg);
     background-size: 100%;
-    opacity: 0.5;
+    opacity: 0.8;
     filter: alpha(opacity=50);
     /* For IE8 and earlier */
 
@@ -581,12 +510,13 @@ footer {
         flex-basis: 350px;
         flex-grow: 1;
         width: 100%;
-        height: 250px;
+        height: 200px;
+        background-repeat: no-repeat;
         position: relative;
         text-align: center;
         cursor: pointer;
         margin: 2px;
-        background-image: url(Billeder/medarbejdere.jpg);
+        background-image: url(ombilleder/medarbejdere.JPG);
         background-size: 100%;
         opacity: 0.8;
         filter: alpha(opacity=50);
@@ -600,12 +530,13 @@ footer {
         flex-basis: 350px;
         flex-grow: 1;
         width: 100%;
-        height: 250px;
+        height: 200px;
         position: relative;
+        background-repeat: no-repeat;
         text-align: center;
         cursor: pointer;
         margin: 2px;
-        background-image: url(Billeder/mission.JPG);
+        background-image: url(ombilleder/Prismet%202.JPG);
         background-size: 100%;
         opacity: 0.8;
         filter: alpha(opacity=50);
@@ -619,13 +550,13 @@ footer {
         flex-basis: 350px;
         flex-grow: 1;
         width: 100%;
-        height: 250px;
+        height: 200px;
         position: relative;
         text-align: center;
-
+        background-repeat: no-repeat;
         cursor: pointer;
         margin: 2px;
-        background-image: url(Billeder/ledigestillinger.jpg);
+        background-image: url(ombilleder/ledigestiller.jpg);
         background-size: 100%;
         opacity: 0.8;
         filter: alpha(opacity=50);
@@ -682,7 +613,7 @@ footer {
 .tagline {
 
     grid-area: tagline;
-    background-color: #0084b0;
+    background-color: rgba(182, 171, 130, 0.53);
     text-align: center;
     margin-top: 5vw;
 
@@ -692,10 +623,11 @@ footer {
 .tagline-text {
 
     text-align: center;
-    font-family: 'The Bold Font';
+    font-family: 'Gotham';
+    text-transform: uppercase;
     color: #ffffff;
     padding: 5vw;
-    font-size: 7vw;
+    font-size: 5vw;
 
 
 
@@ -716,8 +648,8 @@ footer {
     font-family: 'Gotham';
     font-weight: lighter;
     color: #88AABF;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
     font-size: 5vw;
 
 
@@ -730,8 +662,8 @@ footer {
 
         grid-area: tagline;
 
-        padding: 6vw 2vw;
-        padding-bottom: 1vw;
+        padding: 4vw 1vw;
+        padding-bottom: 2vw;
 
 
     }
@@ -747,7 +679,7 @@ footer {
     .tagline {
 
         grid-area: tagline;
-        background-color: #0084b0;
+        background-color: rgba(182, 171, 130, 0.53);
         text-align: center;
         margin-top: 5vw;
 
@@ -757,7 +689,9 @@ footer {
     .tagline-text {
 
         text-align: center;
-        font-family: 'The Bold Font';
+        font-family: 'Gotham';
+        text-transform: uppercase;
+        font-weight: lighter;
         color: #ffffff;
         padding: 4vw;
         font-size: 3vw;
@@ -771,3 +705,175 @@ footer {
 
 
 /*----------------FOOTER-------------------*/
+
+.footer-content {
+
+    padding: 5vw;
+    background: #25282B;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+
+
+}
+
+.open-hours p {
+
+    font-weight: 100;
+    font-size: 3vw;
+     text-align: center;
+
+}
+
+.open-hours {
+    flex-grow: 1;
+    padding: 5vw;
+     text-align: center;
+
+}
+
+
+.footer-kontakt p {
+
+    font-weight: 100;
+    font-size: 3vw;
+     text-align: center;
+
+}
+
+.open-hours h2 {
+
+    font-size: 3vw;
+    text-transform: uppercase;
+    margin: 2vw 0vw;
+
+}
+
+
+.footer-kontakt h2 {
+
+    font-size: 3vw;
+    text-transform: uppercase;
+    margin: 2vw 0vw;
+     text-align: center;
+
+}
+
+.footer-kontakt {
+    flex-grow: 1;
+
+    padding: 5vw;
+
+}
+
+.find-vej {
+    flex-grow: 1;
+
+    padding: 5vw;
+}
+
+.find-vej-tekst{
+
+
+    color: white;
+    text-transform: uppercase;
+    margin: 0vw 0vw 2vw;
+     text-align: center;
+
+}
+
+
+
+
+
+@media screen and (min-width: 760px) {
+
+    footer {
+
+        background: rgb(199, 196, 180);
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+    }
+
+ .footer-content {
+
+    padding: 2vw;
+
+
+
+
+}
+    .open-hours {
+        flex-grow: 1;
+        flex-basis: 200px;
+        padding: 0vw;
+
+    }
+
+    .footer-kontakt {
+        flex-grow: 1;
+        flex-basis: 200px;
+        padding: 2vw;
+
+    }
+
+    .find-vej {
+        flex-grow: 1;
+        flex-basis: 200px;
+        padding: 2vw;
+
+
+    }
+
+    .find-vej img{
+          border-radius: 100%;
+        overflow: hidden;
+        max-height: 15vw;
+        width: auto;
+
+    }
+
+    .open-hours p {
+
+        font-size: 1vw;
+        line-height: 2vw;
+    }
+
+
+    .footer-kontakt p {
+
+        font-size: 1vw;
+        line-height: 2vw;
+
+    }
+
+     .footer-kontakt{
+padding: 0vw;
+
+    }
+
+    .open-hours h2 {
+
+        font-size: 1.7vw;
+        text-transform: uppercase;
+        margin: 2vw 0vw;
+    }
+
+
+    .footer-kontakt h2 {
+
+        font-size: 1.7vw;
+        text-transform: uppercase;
+        margin: 2vw 0vw;
+
+    }
+
+
+}
+
+
+
+/*----------------FOOTER END-------------------*/
