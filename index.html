@@ -12,7 +12,6 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css?family=Comfortaa');
-
     </style>
 
 
@@ -53,7 +52,7 @@
                             <a href="om.html" class="nav-links">Om os</a>
                         </li>
                         <li>
-                            <a href="#" class="nav-links">BOOK NU</a>
+                            <a href="https://www.ebillet.dk/simple/buy.listtt.aspx?refno=29478&fbclid=IwAR3k_hQnj4xwmgVIO3LaaICpXOeox-Dtkl2APMvUadZu3t_qvVb06ViF4As" class="nav-links">BOOK NU</a>
                         </li>
                     </ul>
 
@@ -86,36 +85,21 @@
 
         <div id="attraktioner">
 
-
-            <div class="attraktionflex">
+            <div class="attraktionflextext">
 
                 <div class="attraktion-flex-button">
 
                     <button class="accordion">
 
 
+
                         <div class="klint-text">
-                            <h2>Stevns Klint <br>Unesco Verdensarv</h2>
+                            <h2>Stevns Klint </h2>
                         </div>
-
-
-
-                        <div class="stevnsklint_img">
-                        </div>
-
-
-                        <div class="arrow-klint">
-
-                            <img src="SVG/hvidpil.svg" alt="">
-
-                        </div>
-
 
 
 
                     </button>
-
-
 
                 </div>
 
@@ -123,54 +107,64 @@
                 <div class="attraktion-flex-button">
                     <button class="accordion2">
 
+
                         <div class="koldkrigs-text">
-                            <h2>Koldkrigsmuseum <br>stevnsfort</h2>
+                            <h2>Koldkrigsmuseum <br></h2>
                         </div>
 
 
 
-                        <div class="koldkrigs_img">
+
+
+                    </button>
+                </div>
+
+                <div class="attraktion-flex-button">
+                    <button class="accordion3">
+
+                        <div class="geo-text">
+                            <h2>Geomuseum<br></h2>
                         </div>
 
-
-
-                        <div class="arrow-krig">
-
-                            <img src="SVG/hvidpil.svg" alt="">
-
-                        </div>
 
 
 
                     </button>
 
 
+                </div>
 
+            </div>
+
+
+            <div class="attraktionflex">
+
+                <div class="attraktion-flex-button">
+
+                    <button class="accordion">
+
+                        <div class="stevnsklint_img">
+                        </div>
+
+                    </button>
 
                 </div>
 
 
+                <div class="attraktion-flex-button">
 
+                    <button class="accordion2">
+
+                        <div class="koldkrigs_img">
+                        </div>
+                    </button>
+                </div>
 
                 <div class="attraktion-flex-button">
                     <button class="accordion3">
-                        <div class="geo-text">
-                            <h2>Geomuseum<br>Faxe</h2>
-                        </div>
-
 
                         <div class="geomuseum_img">
                         </div>
-
-
-
-                        <div class="arrow-geo">
-
-                            <img src="SVG/hvidpil.svg" alt="">
-
-                        </div>
-
-
 
                     </button>
 
@@ -183,29 +177,58 @@
     </div>
 
 
+    <div class="vindue">
 
-    <div class="vindue hidden">
-        <div class="indholds-nav hide">
-            <button class="undervisning">Undervisning</button>
-            <button class="viden">Viden</button>
-            <button class="attraktioner">Attraktioner</button>
+        <!------vores 'nav-bar' til fold-ud siden som går igen i de tre attraktioener--------->
+        <div id="indholds-nav" class="hide">
+            <button class="undervisning">
+                <h2>Undervisning</h2>
+            </button>
+            <button class="viden">
+                <h2>Viden</h2>
+            </button>
+            <button class="attraktioner">
+                <h2>Aktiviteter</h2>
+            </button>
         </div>
 
 
-        <div class="tekst"></div>
-        <div class="billede"> <img src="" alt="">
+        <!------indhold som skal foldes ud og er fyldt ud med json via javascript--------->
+
+        <div id="indhold">
+            <div class="tekst"></div>
+            <div class="billede"> <img src="" alt="">
+                <div class="billedefyr"> <img src="" alt=""></div>
+                <div class="billedehavn"> <img src="" alt=""></div>
+                <div class="billedekridt"> <img src="" alt=""></div>
+                <div class="billedemand"> <img src="" alt=""></div>
+                <div class="billedebrud"> <img src="" alt=""></div>
+                <div class="billederodvig"> <img src="" alt=""></div>
+                <div class="billedeundervisning"> <img src="" alt=""></div>
+                <div class="billedeundervisningto"> <img src="" alt=""></div>
+                <div class="billedehistorie"> <img src="" alt=""></div>
+                <div class="billedekultur"> <img src="" alt=""></div>
+
+            </div>
+
         </div>
+
     </div>
-
 
     <script>
         let indholdKlint;
+        let indholdUndervisning;
+        let indholdViden;
+        let indholdAttraktioner;
         document.addEventListener("DOMContentLoaded", start);
 
+
+
         function start() {
+            console.log("start")
 
-
-
+            document.querySelector(".vindue").style.display = "none";
+            //------Json som fetches til vores buttons i de valgte attratktion - her, Stevns Klint---------//
 
             async function getJson() {
 
@@ -215,34 +238,256 @@
 
             }
 
-            document.querySelector("button.accordion").addEventListener("click", visIndhold);
+            async function getJsonUndervisning() {
 
-
-
-
-
-            function visIndhold() {
-
-                document.querySelector(".indholds-nav").classList.remove(".hide");
-                document.querySelector(".tekst").innerHTML = indholdKlint.content.rendered;
-                document.querySelector(".billede img").src = indholdKlint.guid;
+                let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/pages/112"
+                let jsonData = await fetch(url);
+                indholdUndervisning = await jsonData.json();
 
             }
 
+            async function getJsonViden() {
+
+                let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/pages/114"
+                let jsonData = await fetch(url);
+                indholdViden = await jsonData.json();
+
+            }
+
+            async function getJsonAttraktioner() {
+
+                let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/pages/109"
+                let jsonData = await fetch(url);
+                indholdAttraktioner = await jsonData.json();
+
+            }
+
+            document.querySelector("button.accordion").addEventListener("click", visIndhold);
+
+            //------Vis indhold for Stevns Klint attraktioner---------//
+
+            function visIndhold() {
+
+                console.log("visindhold");
+
+                document.querySelector(".vindue").style.display = "";
+                document.querySelector(".billedefyr").style.display = "none";
+                document.querySelector(".billedehavn").style.display = "none";
+                document.querySelector(".billedekridt").style.display = "none";
+                document.querySelector(".billedemand").style.display = "none";
+                document.querySelector(".billedebrud").style.display = "none";
+                document.querySelector(".billederodvig").style.display = "none";
+                document.querySelector(".billedeundervisning").style.display = "none";
+                document.querySelector(".billedeundervisningto").style.display = "none";
+
+
+                document.querySelector("button.accordion").removeEventListener("click", visIndhold);
+
+                document.querySelector("#indholds-nav").classList.remove("hide");
+
+
+                //------Vis indhold for Stevns Klint---------//
+
+                document.querySelector(".tekst").innerHTML = indholdKlint.content.rendered;
+                document.querySelector(".billede img").src = indholdKlint.billede.guid;
+
+                document.querySelector("button.accordion").addEventListener("click", fjernIndhold);
+
+
+                //------Vis undervisnings indhold for Stevns Klint---------//
+                document.querySelector("button.undervisning").addEventListener("click", visUndervisning);
+
+                //------Vis viden indhold for Stevns Klint---------//
+                document.querySelector("button.viden").addEventListener("click", visViden);
+
+                //------Vis attraktioner indhold for Stevns Klint---------//
+                document.querySelector("button.attraktioner").addEventListener("click", visAttraktioner);
+
+
+            }
+
+            function visUndervisning() {
+                console.log("visUndervisning");
+                document.querySelector("button.undervisning").removeEventListener("click", visUndervisning);
+
+
+                document.querySelector(".billedefyr").style.display = "none";
+                document.querySelector(".billedehavn").style.display = "none";
+                document.querySelector(".billedekridt").style.display = "none";
+                document.querySelector(".billedemand").style.display = "none";
+                document.querySelector(".billedebrud").style.display = "none";
+                document.querySelector(".billederodvig").style.display = "none";
+                document.querySelector(".billedehistorie").style.display = "";
+                document.querySelector(".billedekultur").style.display = "";
+                document.querySelector(".billedeundervisning").style.display = "";
+                document.querySelector(".billedeundervisningto").style.display = "";
+
+                //------Fjern indhold for Stevns Klint---------//
+                document.querySelector(".tekst").innerHTML = "";
+                document.querySelector(".billede img").src = "";
+                document.querySelector(".billedefyr img").src = "";
+                document.querySelector(".billedehavn img").src = "";
+                document.querySelector(".billedekridt img").src = "";
+                document.querySelector(".billedemand img").src = "";
+                document.querySelector(".billedebrud img").src = "";
+                document.querySelector(".billederodvig img").src = "";
+                document.querySelector(".billedehistorie img").src = "";
+                document.querySelector(".billedekultur img").src = "";
+                document.querySelector(".billedeundervisning").src = "";
+                document.querySelector(".billedeundervisningto").src = "";
+
+                //------Vis undervisnings indhold for Stevns Klint---------//
+                document.querySelector(".tekst").innerHTML = indholdUndervisning.content.rendered;
+                document.querySelector(".billedeundervisning img").src = indholdUndervisning.billedeundervisning.guid;
+                document.querySelector(".billedeundervisningto img").src = indholdUndervisning.billedeundervisningto.guid;
+
+                //------Vis indhold for viden---------//
+                document.querySelector("button.viden").addEventListener("click", visViden);
+
+                //------Vis indhold for Attraktioner---------//
+                document.querySelector("button.attraktioner").addEventListener("click", visAttraktioner);
+                //------Vis indhold for om---------//
+                document.querySelector("button.accordion").addEventListener("click", visIndhold);
+            }
+
+            function visViden() {
+                console.log("visViden");
+                document.querySelector("button.viden").removeEventListener("click", visViden);
+
+                document.querySelector(".billedefyr").style.display = "none";
+                document.querySelector(".billedehavn").style.display = "none";
+                document.querySelector(".billedekridt").style.display = "none";
+                document.querySelector(".billedemand").style.display = "none";
+                document.querySelector(".billedebrud").style.display = "none";
+                document.querySelector(".billederodvig").style.display = "none";
+                document.querySelector(".billedehistorie img").src = "";
+                document.querySelector(".billedekultur img").src = "";
+                document.querySelector(".billedeundervisning").style.display = "none";
+                document.querySelector(".billedeundervisningto").style.display = "none";
+
+                /*------Fjern indhold for Stevns Klint---------*/
+                document.querySelector(".tekst").innerHTML = "";
+                document.querySelector(".billede img").src = "";
+                document.querySelector(".billedefyr img").src = "";
+                document.querySelector(".billedehavn img").src = "";
+                document.querySelector(".billedekridt img").src = "";
+                document.querySelector(".billedemand img").src = "";
+                document.querySelector(".billedebrud img").src = "";
+                document.querySelector(".billederodvig img").src = "";
+                document.querySelector(".billedeundervisning img").src = "";
+                document.querySelector(".billedeundervisningto img").src = "";
+
+
+
+                /*------Vis viden indhold for Stevns Klint---------*/
+                document.querySelector(".tekst").innerHTML = indholdViden.content.rendered;
+                document.querySelector(".billedehistorie img").src = indholdViden.billedehistorie.guid;
+                document.querySelector(".billedekultur img").src = indholdViden.billedekultur.guid;
+
+
+                //------Vis indhold for undervisning---------//
+                document.querySelector("button.undervisning").addEventListener("click", visUndervisning);
+
+                //------Vis indhold for Attraktioner---------//
+                document.querySelector("button.attraktioner").addEventListener("click", visAttraktioner);
+                //------Vis indhold for om---------//
+                document.querySelector("button.accordion").addEventListener("click", visIndhold);
+
+            }
+
+            function visAttraktioner() {
+                console.log("visAttraktioner");
+
+                document.querySelector(".billedehistorie").style.display = "none";
+                document.querySelector(".billedekultur").style.display = "none";
+                document.querySelector(".billedeundervisning").style.display = "none";
+                document.querySelector(".billedeundervisningto").style.display = "none";
+
+                document.querySelector(".billedefyr").style.display = "";
+                document.querySelector(".billedehavn").style.display = "";
+                document.querySelector(".billedekridt").style.display = "";
+                document.querySelector(".billedemand").style.display = "";
+                document.querySelector(".billedebrud").style.display = "";
+                document.querySelector(".billederodvig").style.display = "";
+                document.querySelector(".billedehistorie").style.display = "";
+                document.querySelector(".billedekultur").style.display = "";
+
+                document.querySelector("button.attraktioner").removeEventListener("click", visAttraktioner);
+
+                /*------Fjern indhold for Stevns Klint---------*/
+                document.querySelector(".tekst").innerHTML = "";
+                document.querySelector(".billede img").src = "";
+                document.querySelector(".billedefyr img").src = "";
+                document.querySelector(".billedehavn img").src = "";
+                document.querySelector(".billedekridt img").src = "";
+                document.querySelector(".billedemand img").src = "";
+                document.querySelector(".billedebrud img").src = "";
+                document.querySelector(".billederodvig img").src = "";
+                document.querySelector(".billedehistorie img").src = "";
+                document.querySelector(".billedekultur img").src = "";
+                document.querySelector(".billedeundervisning img").src = "";
+                document.querySelector(".billedeundervisningto img").src = "";
+
+
+                /*------Vis attraktioenr indhold for Stevns Klint---------*/
+                document.querySelector(".tekst").innerHTML = indholdAttraktioner.content.rendered;
+                document.querySelector(".billedefyr img").src = indholdAttraktioner.billedefyr.guid;
+                document.querySelector(".billedehavn img").src = indholdAttraktioner.billedehavn.guid;
+                document.querySelector(".billedekridt img").src = indholdAttraktioner.billedekridt.guid;
+                document.querySelector(".billedemand img").src = indholdAttraktioner.billedemand.guid;
+                document.querySelector(".billedebrud img").src = indholdAttraktioner.billedebrud.guid;
+                document.querySelector(".billederodvig img").src = indholdAttraktioner.billederodvig.guid;
+
+
+
+                /*------Vis indhold for undervisning---------*/
+                document.querySelector("button.undervisning").addEventListener("click", visUndervisning);
+
+                /*------Vis indhold for viden---------*/
+                document.querySelector("button.viden").addEventListener("click", visViden);
+                /*------Vis indhold for om---------*/
+                document.querySelector("button.accordion").addEventListener("click", visIndhold);
+
+            }
+
+            function fjernIndhold() {
+
+                console.log("fjernIndhold");
+
+                document.querySelector("button.accordion").removeEventListener("click", fjernIndhold);
+                document.querySelector("button.accordion").addEventListener("click", visIndhold);
+
+                document.querySelector("#indholds-nav").classList.add("hide");
+                document.querySelector(".tekst").innerHTML = "";
+                document.querySelector(".billede img").src = "";
+                document.querySelector(".billedefyr img").src = "";
+                document.querySelector(".billedehavn img").src = "";
+                document.querySelector(".billedekridt img").src = "";
+                document.querySelector(".billedemand img").src = "";
+                document.querySelector(".billedebrud img").src = "";
+                document.querySelector(".billederodvig img").src = "";
+                document.querySelector(".billedehistorie img").src = "";
+                document.querySelector(".billedekultur img").src = "";
+                document.querySelector(".billedeundervisning img").src = "";
+                document.querySelector(".billedeundervisningto img").src = "";
+                document.querySelector(".vindue").style.display = "none";
+
+                start();
+            }
 
             getJson();
+            getJsonUndervisning();
+            getJsonViden();
+            getJsonAttraktioner();
 
         }
-
     </script>
-
-
 
 
     <div class="tagline">
         <h2 class=tagline-text>
-            <em> Køb et <span style="color: #ffeb00"> årskort!</span>
-                <br>og spring køen over</em></h2>
+            <em> Besøg os idag Se priser <span style="color: #387288"><a href="pris.html">her!</a></span>
+                <br></em></h2>
         <img id="id_kort" src="ui_elementer/identity-card.svg" alt="">
 
 
@@ -322,90 +567,81 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
-
     </script>
 
 
+    <footer>
+
+        <div class="footer-content">
+
+            <p class="open-hours"></p>
 
 
-    <!--
-        <footer>
+            <p class="footer-kontakt"></p>
 
-            <div class="footer-content">
+        </div>
 
-                <p class="open-hours"></p>
+        <script>
+            let tekstFooter;
+            document.addEventListener("DOMContentLoaded", start);
 
+            function start() {
 
-                <p class="footer-kontakt"></p>
+                async function getJson() {
 
-            </div>
+                    let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/80"
+                    let jsonData = await fetch(url);
+                    tekstFooter = await jsonData.json();
+                    visFooter();
+                }
 
-            <script>
-                let tekstFooter;
-                document.addEventListener("DOMContentLoaded", start);
+                function visFooter() {
 
-                function start() {
-
-                    async function getJson() {
-
-                        let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/80"
-                        let jsonData = await fetch(url);
-                        tekstFooter = await jsonData.json();
-                        visFooter();
-                    }
-
-                    function visFooter() {
-
-                        document.querySelector(".open-hours").innerHTML = tekstFooter.content.rendered;
-
-                    }
-                    getJson();
+                    document.querySelector(".open-hours").innerHTML = tekstFooter.content.rendered;
 
                 }
-            </script>
+                getJson();
+
+            }
+        </script>
 
 
-            <script>
-                let tekstKontakt;
-                document.addEventListener("DOMContentLoaded", start);
+        <script>
+            let tekstKontakt;
+            document.addEventListener("DOMContentLoaded", start);
 
-                function start() {
+            function start() {
 
-                    async function getJson() {
+                async function getJson() {
 
-                        let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/81"
-                        let jsonData = await fetch(url);
-                        tekstKontakt = await jsonData.json();
-                        visKontakt();
-                    }
+                    let url = "http://naomitangoe.dk/kea/2semester/kalklandet/wordpress/wp-json/wp/v2/om-os/81"
+                    let jsonData = await fetch(url);
+                    tekstKontakt = await jsonData.json();
+                    visKontakt();
+                }
 
-                    function visKontakt() {
+                function visKontakt() {
 
-                        document.querySelector(".footer-kontakt").innerHTML = tekstKontakt.content.rendered;
-
-                    }
-                    getJson();
+                    document.querySelector(".footer-kontakt").innerHTML = tekstKontakt.content.rendered;
 
                 }
-            </script>
+                getJson();
+
+            }
+        </script>
 
 
 
-            <div class="find-vej">
+        <div class="find-vej">
 
-                <img src="Billeder/kort_kalklandet.png" alt="">
-
-
-            </div>
+            <img src="Billeder/kort_kalklandet.png" alt="">
 
 
-
-        </footer>
--->
+        </div>
 
 
 
-
+    </footer>
 
 
 </body>

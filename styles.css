@@ -10,6 +10,8 @@ body {
     font-weight: lighter;
     text-align: center;
     font-weight: bolder;
+
+    width: 100%;
 }
 
 h1 {
@@ -21,7 +23,7 @@ h1 {
 
 }
 
-img{
+img {
     width: 100%;
 }
 
@@ -296,37 +298,7 @@ img{
 /*----------------GRID AREAS-------------------*/
 
 
-#content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(100px, auto);
 
-    max-width: 960px;
-    margin: 0 auto;
-    grid-template-areas:
-        "header header header header"
-        "attraktioner attraktioner attraktioner attraktioner"
-        "om om om om"
-        "footer footer footer footer";
-}
-
-/* desktop grid */
-@media screen and (min-width: 760px) {
-    #content {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-        grid-gap: 10px;
-        max-width: 100%;
-        margin: 0 auto;
-        grid-template-areas:
-            "header header header header"
-            "attraktioner attraktioner attraktioner attraktioner"
-            "footer footer footer footer";
-    }
-}
-
-#content > * {}
 
 header {
     grid-area: header;
@@ -336,9 +308,11 @@ header {
 
 p {
     text-align: left;
-    font-family: 'The Bold Font';
+    /*    font-family: 'The Bold Font';*/
+    font-family: 'Gotham';
+    font-weight: lighter;
     color: #ffffff;
-    font-size: 4vw;
+    font-size: 3vw;
 
 
 }
@@ -358,23 +332,10 @@ p {
 
 
 
-.footer_tekst {
+a {
 
-    text-align: left;
-    /*    font-family: 'Roboto', sans-serif;*/
-    font-family: 'Gotham', cursive;
-    font-weight: 100;
-
-
-    /*    font-weight: lighter;*/
-
-    color: #ffffff;
-    font-size: 3vw;
-    padding: 20px;
-
-
+    text-decoration: none;
 }
-
 
 
 main {
@@ -411,25 +372,24 @@ main {
 }
 
 .aktuelt {
-    grid-area: aktuelt;
+
 
     padding: 6vw;
 }
 
 footer {
-    grid-area: footer;
-    background: rgb(47, 47, 47);
+
+    background: rgb(199, 196, 180);
     color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
 #attraktioner {
-    grid-area: attraktioner;
+
     display: grid;
-
-
-
-
+    margin: 0vw;
 
 
 }
@@ -438,17 +398,27 @@ footer {
 
 
 
-
-
 /*----------------ATTRAKTIONER-------------------*/
+
+
 
 
 .attraktionflex {
 
     overflow: hidden;
     display: flex;
+    margin: 1vw 6vw;
+    ;
+    justify-content: space-between;
 
+
+}
+
+.attraktion-flex-button {
+
+    display: flex;
     flex-wrap: wrap;
+
 }
 
 
@@ -460,55 +430,131 @@ footer {
 .accordion {
 
     flex-grow: 1;
-    flex-basis: 500px;
+    flex-basis: 50px;
     margin: 1vw;
     transition: 0.3s;
-    margin-bottom: 10vw;
+
 
 }
 
-button.accordion{
-  cursor:pointer;
-  border:none;
-  outline:none;
-  width:100%;
-  text-align:left;
-  background-color:transparent;
-  color:#fff;
-  padding:8px;
-  margin:4px 0;
-  border-radius:4px;
-  transition:0.3s;
+.accordion2 {
+
+    flex-grow: 1;
+    flex-basis: 50px;
+    margin: 1vw;
+    transition: 0.3s;
+
+
 }
 
-button.accordion:hover{
-  background-color:rgba(255,255,255,0.3);
+.accordion3 {
+
+    flex-grow: 1;
+    flex-basis: 50px;
+    margin: 1vw;
+    transition: 0.3s;
+
+
 }
 
-button.accordion.active{
-  background-color:#fff;
-  color:#000;
-  border-radius:4px 4px 0 0;
-  margin:4px 0 0;
- }
 
-div.panel{
-  background-color:rgba(255,255,255,0.8);
-  color:#000;
-  border-radius:0 0 4px 4px;
-  overflow:hidden;
-  opacity:0;
-  max-height:0;
-  transition:0.3s;
-  padding:0 8px;
-  margin:0;
+button.accordion {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+    color: #fff;
+    padding: 1px;
+    margin: 1px;
+    border-radius: 1px;
+    transition: 0.3s;
+    flex-basis: 300px;
+    flex-grow: 1;
 }
 
-div.panel.show{
-  opacity:1;
-  max-height:500px;
-  padding:8px;
-  margin:2px 0 4px;
+button.accordion2 {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+    color: #fff;
+    padding: 1px;
+    margin: 1px;
+    border-radius: 1px;
+    transition: 0.3s;
+    flex-basis: 300px;
+    flex-grow: 1;
+
+}
+
+button.accordion3 {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+    color: #fff;
+    padding: 1px;
+    margin: 1px;
+    border-radius: 1px;
+    transition: 0.3s;
+    flex-basis: 300px;
+    flex-grow: 1;
+
+}
+
+button.accordion:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+button.accordion2:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+button.accordion3:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+button.accordion.active {
+    background-color: #fff;
+    color: #000;
+    border-radius: 4px 4px 0 0;
+    margin: 4px 0 0;
+}
+
+button.accordion2.active {
+    background-color: #fff;
+    color: #000;
+    border-radius: 4px 4px 0 0;
+    margin: 4px 0 0;
+}
+
+button.accordion3.active {
+    background-color: #fff;
+    color: #000;
+    border-radius: 4px 4px 0 0;
+    margin: 4px 0 0;
+}
+
+div.panel {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: 0.3s;
+    padding: 0 8px;
+    margin: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 500px;
+    padding: 8px;
+    margin: 2px 0 4px;
 }
 
 
@@ -518,61 +564,35 @@ div.panel.show{
 
     background-image: url(ikoner/stevnsklintlogo.svg);
     background-repeat: no-repeat;
-    margin-left: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20vw;
+    width: 20vw;
 
 
-    height: 35vw;
-    width: 35vw;
-    text-align: center;
-    display: inline-block;
-
-
-
-
-padding: 0vw 20vw;
 }
 
 .klint-text {
-
     text-align: center;
     text-transform: uppercase;
     font-family: 'Comfortaa', cursive;
     color: #88aabf;
-    padding: 8vw 3vw 3vw;
-    font-size: 2.3vw;
-
+    padding: 2vw 3vw;
+    font-size: 1.3vw;
 
 }
 
-.arrow-klint {
-    cursor:pointer;
-  border:none;
-  outline:none;
-
-        width: 10vw;
-    display: inline-block;
-    margin-top: 5vw;
-
-    padding-top: 1vw;
-
-    background-color:  rgba(136, 170, 191, 0.67);
-}
 
 /*-----------KOLDKRIGSMUSEUM----------------*/
 
-
-
-
 .koldkrigs_img {
-    display: inline-block;
+
     background-image: url(ikoner/koldkrigslogo.svg);
     background-repeat: no-repeat;
-    height: 35vw;
-    width: 35vw;
-    text-align: center;
-    padding: 0vw 20vw;
-
-
+    height: 20vw;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .koldkrigs-text {
@@ -581,13 +601,11 @@ padding: 0vw 20vw;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Comfortaa', cursive;
-    color:#387288;
-    padding: 1vw 3vw 0vw 3vw;
-    font-size: 2.3vw;
-
+    color: #387288;
+    padding: 2vw 3vw;
+    font-size: 1.3vw;
 
 }
-
 
 /*-----------GEOMUSEUM----------------*/
 
@@ -595,29 +613,21 @@ padding: 0vw 20vw;
 .geomuseum_img {
     background-image: url(ikoner/geologo.svg);
     background-repeat: no-repeat;
-    height: 35vw;
-    width: 35vw;
-    text-align: center;
-    display: inline-block;
-    padding: 0vw 20vw;
-
-
-
-
+    height: 20vw;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 .geo-text {
-
     position: relative;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Comfortaa', cursive;
     color: #88bfb0;
-    padding: 0vw 3vw;
-    font-size: 2.3vw;
-
-
+    padding: 2vw 3vw;
+    font-size: 1.3vw;
 
 }
 
@@ -625,165 +635,88 @@ padding: 0vw 20vw;
 @media screen and (min-width: 760px) {
 
     .attraktionflex {
-
         overflow: hidden;
         display: flex;
         flex-wrap: wrap;
-        margin: 5vw;
+        margin: 2vw 10vw;
 
     }
-
-
-    .accordion {
-        height: 35vw;
-        flex-grow: 1;
-        flex-basis: 100px;
-        margin: 1vw;
-        transition: 0.0s;
-
-
-
-    }
-
 
     .stevnsklint_img {
-
-       margin-left: 5vw;
-
-
-    height: 15vw;
-    width: 10vw;
-    text-align: center;
-    display: inline-block;
-
-padding: 0vw;
+        height: 10vw;
+        width: 10vw;
+        text-align: center;
+        padding: 0vw;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .klint-text {
-
         text-align: center;
         text-transform: uppercase;
         font-family: 'Comfortaa', cursive;
         color: #88aabf;
         padding: 0vw 3vw;
         font-size: 1vw;
-
-
     }
-
-    .arrow-klint {
-
-
-        width: 4vw;
-    display: inline-block;
-    margin-top: 1vw;
-
-    padding-top: 1vw;
-
-}
 
     /*-----------KOLDKRIGSMUSEUM----------------*/
 
 
 
     .koldkrigs_img {
-       margin-left: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+        height: 10vw;
+        width: 10vw;
 
-
-    height: 15vw;
-    width: 10vw;
-    text-align: center;
-    display: inline-block;
-
-padding: 0vw;
-
+        padding: 0vw;
 
     }
 
     .koldkrigs-text {
-
         text-align: center;
         text-transform: uppercase;
         font-family: 'Comfortaa', cursive;
-        color: #88aabf;
+        color: #387288;
         padding: 0vw 3vw;
         font-size: 1vw;
 
     }
-
-        .arrow-krig {
-
-
-        width: 4vw;
-    display: inline-block;
-    margin-top: 1vw;
-
-    padding-top: 1vw;
-
-}
-
-
 
 
     /*-----------GEOMUSEUM----------------*/
 
 
-
-
     .geomuseum_img {
-      margin-left: 5vw;
 
-
-    height: 15vw;
-    width: 10vw;
-    text-align: center;
-    display: inline-block;
-
-padding: 0vw;
+        height: 10vw;
+        width: 10vw;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0vw;
     }
 
 
     .geo-text {
 
-       text-align: center;
+        text-align: center;
         text-transform: uppercase;
         font-family: 'Comfortaa', cursive;
-        color: #88aabf;
+        color: #88bfb0;
         padding: 0vw 3vw;
         font-size: 1vw;
-
-
     }
 
-         .arrow-geo {
 
 
-        width: 4vw;
-    display: inline-block;
-    margin-top: 1vw;
-
-    padding-top: 1vw;
-
-}
-
-
-    div.panel{
-
-
-
-}
-
-div.panel.show{
-  opacity:1;
-  max-height:500px;
-  padding:8px;
-  margin:2px 0 4px;
-
-
-
-}
-
-
+    div.panel.show {
+        opacity: 1;
+        max-height: 500px;
+        padding: 8px;
+        margin: 2px 0 4px;
+    }
 
 }
 
@@ -805,28 +738,23 @@ div.panel.show{
 
 
 .tagline {
-
-    grid-area: tagline;
     /*    background-color: #FFF700;*/
     /*        background-color: rgb(229, 197, 125);*/
     /*    background-color: rgb(47, 47, 47);*/
     text-align: center;
-
-
 
 }
 
 .tagline-text {
 
     text-align: center;
-    font-family: 'The Bold Font';
+    font-family: 'Gotham';
+    text-transform: uppercase;
+    font-weight: 300;
     color: #000000;
-
     /*    text-shadow: 0px 5px #a7a7a7;*/
     padding: 5vw;
-    font-size: 7vw;
-
-
+    font-size: 4vw;
 
 }
 
@@ -894,63 +822,39 @@ div.panel.show{
 
 
 
+.stevns-indhold {
 
 
-
-
-
-
-.arrow-krig {
-        width: 10vw;
-    display: inline-block;
-    margin-top: 5vw;
-
-    padding-top: 1vw;
-
-      background-color: #387288;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: 0.3s;
+    padding: 0 8px;
+    margin: 0;
 }
 
-.arrow-geo {
-        width: 10vw;
-    display: inline-block;
-    margin-top: 5vw;
-
-    padding-top: 1vw;
-
-      background-color: #88bfb0;
+.stevns-indhold.show {
+    opacity: 1;
+    max-height: 500px;
+    padding: 8px;
+    margin: 2px 0 4px;
 }
 
 
-
-
-.stevns-indhold{
-
-
-  overflow:hidden;
-  opacity:0;
-  max-height:0;
-  transition:0.3s;
-  padding:0 8px;
-  margin:0;
-}
-
-.stevns-indhold.show{
-  opacity:1;
-  max-height:500px;
-  padding:8px;
-  margin:2px 0 4px;
-}
-
-
-.indholds-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#indholds-nav {
     padding: 2vw 5vw;
 }
 
+.accordion {
+    flex-grow: 1;
+    flex-basis: 500px;
+    margin: 1vw;
+    transition: 0.3s;
+    margin-bottom: 10vw;
+}
+
 .accordion2 {
-      flex-grow: 1;
+    flex-grow: 1;
     flex-basis: 500px;
     margin: 1vw;
     transition: 0.3s;
@@ -958,34 +862,338 @@ div.panel.show{
 }
 
 .accordion3 {
-      flex-grow: 1;
+    flex-grow: 1;
     flex-basis: 500px;
     margin: 1vw;
     transition: 0.3s;
     margin-bottom: 10vw;
 }
 
-.tekst {
-    color: black;
+
+
+div.show {
+
+    opacity: 1;
+    max-height: 500px;
+    padding: 8px;
+    margin: 2px 0 4px;
+
+
 }
 
-vindue {
-display: flex;
+/*---til at skjule indhold når man navigere rundt i sider---*/
+
+.hide {
+    visibility: hidden;
+
+}
+
+.hidden {
+    display: none;
+
+
+}
+
+/*---Parent og childelementer til flex af vores indhold i accordion---*/
+
+#indhold {
+
+    display: flex;
     flex-wrap: wrap;
+
+}
+
+.tekst {
+
+    margin: 3vw;
+    flex-grow: 1;
+    flex-basis: 500px;
+
+
+}
+
+
+.tekst p {
+
+    color: black;
+    font-size: 4vw;
+    font-family: 'Gotham';
+    font-weight: 300;
+    line-height: 1.5;
+    flex-basis: 400px;
+    flex-grow: 1;
+
+
+}
+
+.tekst h3 {
+
+    margin: 4vw;
+
+}
+
+.billede {
+    flex-basis: 500px;
+    flex-grow: 1;
+    margin: 3vw;
+
+
+}
+
+
+.billedefyr {
+
+    margin: 3vw;
+
+
+}
+
+.billedehavn {
+
+    margin: 3vw;
+
+
+}
+
+.billedekridt {
+
+    margin: 3vw;
+
+
+}
+
+.billedemand {
+
+    margin: 3vw;
+
+
+}
+
+.billedebrud {
+
+    margin: 3vw;
+
+
+}
+
+.billederodvig {
+
+    margin: 3vw;
+
+
+}
+
+.billedehistorie {
+
+    margin: 3vw;
+
+
+}
+
+.billedekultur {
+
+    margin: 3vw;
+
+
+}
+
+.billedeundervisning {
+
+    margin: 3vw;
+
+
+
+
+
+}
+
+.billedeundervisningto {
+
+    margin: 3vw;
+
+
+}
+
+
+
+
+#indholds-nav h2 {
+
+    font-size: 2.5vw;
+    margin: 0vw 1vw;
+    font-weight: 300;
+
+}
+
+
+@media screen and (min-width: 760px) {
+
+    .tekst p {
+
+        color: black;
+        font-size: 1vw;
+
+
+    }
+
+    .tekst h3 {
+
+        margin: 2vw;
+        font-family: 'Gotham';
+        font-weight: 300;
+        font-size: 1.7vw;
+        text-transform: uppercase;
+
+    }
+
+    .tekst h4 {
+
+        margin-top: 2vw;
+        margin-bottom: 0.5vw;
+        font-family: 'Gotham';
+        font-weight: 300;
+        text-transform: uppercase;
+
+
+    }
+
+
+
+    #indholds-nav h2 {
+
+        font-size: 2vw;
+        margin: 0vw 1vw;
+        font-weight: 200;
+
+    }
+
+    #indholds-nav {
+        padding: 0vw;
+    }
+
+
+}
+
+.undervisning {
+    border: none;
+    font-size: 3vw;
+    text-transform: uppercase;
+    font-family: 'Gotham';
+    font-weight: 300;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 2vw;
+    background-color: rgba(182, 171, 130, 0);
+
+}
+
+.viden {
+    border: none;
+    font-size: 3vw;
+    text-transform: uppercase;
+    font-family: 'Gotham';
+    font-weight: 300;
+    cursor: pointer;
+    color: #fcffff;
+    padding: 2vw;
+    background-color: rgba(182, 171, 130, 0);
+}
+
+.attraktioner {
+    border: none;
+    font-size: 3vw;
+    text-transform: uppercase;
+    font-family: 'Gotham';
+    font-weight: 300;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 2vw;
+    background-color: rgba(182, 171, 130, 0);
+
+
+}
+
+
+
+#indholds-nav {
+    background-color: rgba(182, 171, 130, 0.53);
+}
+
+
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5vw;
+
+
+}
+
+.open-hours p {
+
+    font-weight: 100;
+    font-size: 3vw;
+
+}
+
+.open-hours {
+    flex-grow: 1;
+    flex-basis: 200px;
+    padding: 5vw;
+
+}
+
+
+.footer-kontakt p {
+
+    font-weight: 100;
+    font-size: 3vw;
+
+}
+
+.footer-kontakt {
+    flex-grow: 1;
+    flex-basis: 200px;
+    padding: 5vw;
+}
+
+.find-vej {
+    flex-grow: 1;
+    flex-basis: 200px;
+    padding: 5vw;
+}
+
+.attraktionflextext {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2vw 0vw;
     justify-content: space-between;
 }
 
-div.show{
 
-      opacity:1;
-  max-height:500px;
-  padding:8px;
-  margin:2px 0 4px;
 
+
+.attraktionflextext h2 {
+    font-weight: 600;
+    font-size: 3vw;
 
 }
 
-.hide{
-    display: none;
+@media screen and (min-width:768px) {
+
+    .attraktionflextext h2 {
+        font-size: 2vw;
+    }
+
+    .attraktionflextext {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2vw 5vw;
+        justify-content: space-between;
+    }
+
 
 }
