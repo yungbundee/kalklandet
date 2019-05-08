@@ -321,8 +321,7 @@ a {
 }
 
 
-main {
-    grid-area: main;
+#main {
     background-image: url(Billeder/Faxe_Kalkbrud_.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -381,7 +380,7 @@ main {
 
     overflow: hidden;
     display: flex;
-    margin: 1vw 6vw;
+    margin: 1vw 2vw;
     ;
     justify-content: space-between;
 
@@ -400,76 +399,113 @@ main {
 
 /*-----------stevns klint----------------*/
 
-
-.accordion {
-
-    flex-grow: 1;
-    flex-basis: 50px;
-    margin: 1vw;
-    transition: 0.3s;
-
-
-}
-
-.accordion2 {
-
-    flex-grow: 1;
-    flex-basis: 50px;
-    margin: 1vw;
-    transition: 0.3s;
-
-
-}
-
-.accordion3 {
-
-    flex-grow: 1;
-    flex-basis: 50px;
-    margin: 1vw;
-    transition: 0.3s;
-
-
-}
-
-
 button.accordion {
     cursor: pointer;
     border: none;
     outline: none;
     text-align: left;
     background-color: transparent;
-    color: #fff;
+
     padding: 1px;
     margin: 1px;
     border-radius: 1px;
     transition: 0.3s;
     flex-basis: 300px;
     flex-grow: 1;
+
+       text-align: center;
+    text-transform: uppercase;
+    font-family: 'Comfortaa', cursive;
+    font-size: 2.5vw;
+
+     color: #88aabf;
+
+
+
 }
 
-button.accordion2 {
-    cursor: pointer;
+
+button.accordion-img{
+        cursor: pointer;
     border: none;
     outline: none;
     text-align: left;
     background-color: transparent;
-    color: #fff;
+
     padding: 1px;
     margin: 1px;
     border-radius: 1px;
     transition: 0.3s;
     flex-basis: 300px;
     flex-grow: 1;
+
+     background-image: url(ikoner/stevnsklintlogo.svg);
+    background-repeat: no-repeat;
+       height: 20vw;
+        width: 20vw;
+        text-align: center;
+        padding: 0vw;
+        margin-left: auto;
+        margin-right: auto;
+
+
+
+}
+
+button.accordion2 {
+       cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+
+    padding: 1px;
+    margin: 1px;
+    border-radius: 1px;
+    transition: 0.3s;
+    flex-basis: 300px;
+    flex-grow: 1;
+
+       text-align: center;
+    text-transform: uppercase;
+    font-family: 'Comfortaa', cursive;
+    font-size: 2.5vw;
+
+      color: #387288;
+}
+
+button.accordion2-img {
+        cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+
+    padding: 1px;
+    margin: 1px;
+    border-radius: 1px;
+    transition: 0.3s;
+    flex-basis: 300px;
+    flex-grow: 1;
+
+     background-image: url(ikoner/koldkrigslogo.svg);
+    background-repeat: no-repeat;
+       height: 20vw;
+        width: 20vw;
+        text-align: center;
+        padding: 0vw;
+        margin-left: auto;
+        margin-right: auto;
 
 }
 
 button.accordion3 {
-    cursor: pointer;
+      cursor: pointer;
     border: none;
     outline: none;
     text-align: left;
     background-color: transparent;
-    color: #fff;
+
     padding: 1px;
     margin: 1px;
     border-radius: 1px;
@@ -477,11 +513,41 @@ button.accordion3 {
     flex-basis: 300px;
     flex-grow: 1;
 
+       text-align: center;
+    text-transform: uppercase;
+    font-family: 'Comfortaa', cursive;
+    font-size: 2.5vw;
+
+          color: #88bfb0;
+
 }
 
-button.accordion:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+button.accordion3-img {
+        cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+
+    padding: 1px;
+    margin: 1px;
+    border-radius: 1px;
+    transition: 0.3s;
+    flex-basis: 300px;
+    flex-grow: 1;
+
+     background-image: url(ikoner/geologo.svg);
+    background-repeat: no-repeat;
+       height: 20vw;
+        width: 20vw;
+        text-align: center;
+        padding: 0vw;
+        margin-left: auto;
+        margin-right: auto;
+
 }
+
+
 
 button.accordion2:hover {
     background-color: rgba(255, 255, 255, 0.3);
@@ -841,13 +907,7 @@ div.panel.show {
     padding: 2vw 5vw;
 }
 
-.accordion {
-    flex-grow: 1;
-    flex-basis: 500px;
-    margin: 1vw;
-    transition: 0.3s;
-    margin-bottom: 10vw;
-}
+
 
 .accordion2 {
     flex-grow: 1;
@@ -1122,7 +1182,7 @@ div.show {
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    margin: 2vw 0vw;
+    margin: 2vw 2vw;
     justify-content: space-between;
 }
 
@@ -1326,3 +1386,7 @@ padding: 0vw;
 
 
 /*----------------FOOTER END-------------------*/
+
+.accordion2-img {
+
+}

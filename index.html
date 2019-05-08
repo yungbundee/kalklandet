@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 
 <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -29,7 +29,7 @@
 
 
         <header>
-            <main>
+            <div id="main">
 
                 <nav class="navbar sticky">
                     <span class="navbar-toggle" id="js-navbar-toggle">
@@ -60,15 +60,10 @@
 
                 <div class="headertext">
 
-                    <h1>ATTRAKTIONER<br>
-                        <p class="underheader" style="color: white">Læs om de forskellige attraktioner vi tilbyder herunder</p>
+                    <h1>ATTRAKTIONER<br></h1>
 
-                    </h1>
-
-
+                    <p class="underheader" style="color: white">Læs om de forskellige attraktioner vi tilbyder herunder</p>
                     <br><br>
-
-
                 </div>
 
                 <div class="arrow">
@@ -78,7 +73,7 @@
                 </div>
 
 
-            </main>
+            </div>
 
         </header>
 
@@ -89,47 +84,17 @@
 
                 <div class="attraktion-flex-button">
 
-                    <button class="accordion">
-
-
-
-                        <div class="klint-text">
-                            <h2>Stevns Klint </h2>
-                        </div>
-
-
-
-                    </button>
+                    <button class="accordion">Stevns Klint</button>
 
                 </div>
 
 
                 <div class="attraktion-flex-button">
-                    <button class="accordion2">
-
-
-                        <div class="koldkrigs-text">
-                            <h2>Koldkrigsmuseum <br></h2>
-                        </div>
-
-
-
-
-
-                    </button>
+                    <button class="accordion2">Koldkrigsmuseum</button>
                 </div>
 
                 <div class="attraktion-flex-button">
-                    <button class="accordion3">
-
-                        <div class="geo-text">
-                            <h2>Geomuseum<br></h2>
-                        </div>
-
-
-
-
-                    </button>
+                    <button class="accordion3">Geomuseum</button>
 
 
                 </div>
@@ -141,10 +106,9 @@
 
                 <div class="attraktion-flex-button">
 
-                    <button class="accordion">
+                    <button class="accordion-img">
 
-                        <div class="stevnsklint_img">
-                        </div>
+
 
                     </button>
 
@@ -153,18 +117,15 @@
 
                 <div class="attraktion-flex-button">
 
-                    <button class="accordion2">
+                    <button class="accordion2-img">
 
-                        <div class="koldkrigs_img">
-                        </div>
+
                     </button>
                 </div>
 
                 <div class="attraktion-flex-button">
-                    <button class="accordion3">
+                    <button class="accordion3-img">
 
-                        <div class="geomuseum_img">
-                        </div>
 
                     </button>
 
@@ -181,14 +142,9 @@
 
         <!------vores 'nav-bar' til fold-ud siden som går igen i de tre attraktioener--------->
         <div id="indholds-nav" class="hide">
-            <button class="undervisning">
-                <h2>Undervisning</h2>
-            </button>
-            <button class="viden">
-                <h2>Viden</h2>
-            </button>
-            <button class="attraktioner">
-                <h2>Aktiviteter</h2>
+            <button class="undervisning">Undervisning</button>
+            <button class="viden">Viden</button>
+            <button class="attraktioner">Aktiviteter
             </button>
         </div>
 
@@ -497,7 +453,7 @@
 
             <div class="mySlides fade">
 
-                <img src="img/slide1.jpg" style="width:100%">
+                <img src="img/slide1.jpg" alt="slide" style="width:100%">
                 <div class="text">
                     <p>Stevns Fort</p>
                 </div>
@@ -505,7 +461,7 @@
 
             <div class="mySlides fade">
 
-                <img src="img/slide2.jpg" style="width:100%">
+                <img src="img/slide2.jpg" alt="slide" style="width:100%">
                 <div class="text">
                     <p>Klinten</p>
                 </div>
@@ -513,7 +469,7 @@
 
             <div class="mySlides fade">
 
-                <img src="img/slide3.jpg" style="width:100%">
+                <img src="img/slide3.jpg" alt="slide" style="width:100%">
                 <div class="text">
                     <p>Geo Museet</p>
                 </div>
@@ -584,7 +540,7 @@
 
             <div class="find-vej">
 
-<!--                <h2 class="find-vej-tekst">Find vej</h2>-->
+                <!--                <h2 class="find-vej-tekst">Find vej</h2>-->
 
                 <img src="Billeder/kort_kalklandet.png" alt="">
 
