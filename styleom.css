@@ -301,8 +301,8 @@ h3 {
 
 }
 
-main {
-    grid-area: main;
+#main {
+
     background-image: url(Billeder/Faxe_Kalkbrud_.jpg);
     background-size: cover;
     background-repeat: no-repeat;
